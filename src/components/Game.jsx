@@ -4,14 +4,19 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from './ui/card';
 import { preloadAudio, playSound, toggleMute, getMuteState, toggleMusicMute, getMusicMuteState } from '@/lib/audio';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from './ui/dialog';
+import score1Audio from '/audio/score-1.mp3';
+import score3Audio from '/audio/score-3.mp3';
+import score5Audio from '/audio/score-5.mp3';
+import ambientMusicAudio from '/audio/ambient-music.mp3';
+import winAudio from '/audio/win.mp3';
 
 // Audio files to preload
 const audioFiles = {
-    score1: '/audio/score-1.mp3',
-    score3: '/audio/score-3.mp3',
-    score5: '/audio/score-5.mp3',
-    ambientMusic: '/audio/ambient-music.mp3',
-    win: '/audio/win.mp3'
+    score1: score1Audio,
+    score3: score3Audio,
+    score5: score5Audio,
+    ambientMusic: ambientMusicAudio,
+    win: winAudio
 };
 
 const Game = ({ onSceneReady }) => {
