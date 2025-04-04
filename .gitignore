@@ -68,6 +68,3 @@ out/
 
 # Coverage directory used by tools like istanbul
 coverage/
-
-# Compiled output
-lib/ 
