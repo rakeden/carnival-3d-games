@@ -1,65 +1,17 @@
-# React Vite App
+# Carnival 3D Game Demo
 
-This project is a React application bootstrapped with Vite, styled using Tailwind CSS, and includes ShadCN for UI components.
+![Application Preview](public/preview.png)
 
-## Getting Started
+This project is a React application bootstrapped with Vite, styled using Tailwind CSS, and includes ShadCN for UI components. Additionally, it leverages React-Three-Fiber, a powerful library for building 3D graphics in React, to create immersive 3D experiences.
 
-To get started with this project, follow the instructions below.
+## Technologies Used
 
-### Prerequisites
+- **React**: A JavaScript library for building user interfaces, particularly single-page applications where you can create reusable UI components.
+- **Vite**: A build tool that provides a faster and leaner development experience for modern web projects. It offers fast server start, instant hot module replacement, and optimized builds.
+- **Tailwind CSS**: A utility-first CSS framework for creating custom designs without having to leave your HTML. It provides low-level utility classes to build complex designs.
+- **ShadCN**: A component library that provides reusable UI components to speed up development.
+- **React-Three-Fiber**: A React renderer for Three.js, allowing you to build 3D graphics using React components. It simplifies the process of creating complex 3D scenes and animations by leveraging the declarative nature of React.
 
-Make sure you have the following installed:
+## Development
 
-- Node.js (version 14 or higher)
-- npm (comes with Node.js)
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
-   cd react-vite-app
-   ```
-
-2. Install the dependencies:
-
-   ```bash
-   npm install
-   ```
-
-### Running the Application
-
-To start the development server, run:
-
-```bash
-npm run dev
-```
-
-This will start the application at `http://localhost:3000`.
-
-### Building for Production
-
-To build the application for production, run:
-
-```bash
-npm run build
-```
-
-The built files will be output to the `dist` directory.
-
-### Usage
-
-You can start modifying the application by editing the files in the `src` directory. The main application component is located in `src/App.jsx`.
-
-### Tailwind CSS
-
-This project uses Tailwind CSS for styling. You can customize the styles in `src/index.css` and `tailwind.config.js`.
-
-### ShadCN
-
-ShadCN is included for reusable UI components. You can find the components in the `src/components/ui` directory.
-
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project was written 99.9% using Cursor and Claude 3.5, showcasing the capabilities of these tools in modern web development.
