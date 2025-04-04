@@ -260,6 +260,13 @@ const Game = ({ onSceneReady }) => {
                                 <li>Custom collision detection system</li>
                             </ul>
                         </div>
+                        <div>
+                            <h3 className="text-lg font-semibold text-purple-400">Developer</h3>
+                            <ul className="list-disc pl-5 mt-2">
+                                <li>Developed by <a href="https://twitter.com/rakeden" className="text-purple-400 hover:text-purple-500">@rakeden</a></li>
+                                <li>Passionate about creating interactive web experiences</li>
+                            </ul>
+                        </div>
                     </div>
                     <DialogFooter>
                         <Button 
