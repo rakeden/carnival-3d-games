@@ -1,0 +1,45 @@
+{
+  "name": "carnival-horse-racing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-navigation-menu": "^1.2.5",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@react-spring/three": "^9.7.5",
+    "@react-three/cannon": "^6.6.0",
+    "@react-three/drei": "^10.0.5",
+    "@react-three/fiber": "^9.1.1",
+    "@react-three/postprocessing": "^3.0.4",
+    "@tailwindcss/postcss": "^4.0.17",
+    "@tailwindcss/vite": "^4.0.17",
+    "@use-gesture/react": "^10.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.485.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.4.1",
+    "shadcn": "^1.0.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss": "^4.0.17",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.175.0",
+    "three-csg-ts": "^3.2.0",
+    "tw-animate-css": "^1.2.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0",
+    "vite": "^6.2.4"
+  },
+  "description": "This project is a React application bootstrapped with Vite, styled using Tailwind CSS, and includes ShadCN for UI components.",
+  "author": "rakeden",
+  "license": "Unlicense"
+}

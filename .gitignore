@@ -1,0 +1,73 @@
+# Node modules
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# dotenv environment variables file
+.env
+
+# MacOS files
+.DS_Store
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Yarn Integrity file
+yarn.lock
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Parcel-bundler cache
+.cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build output
+.nuxt
+
+# Gatsby files
+.cache/
+public/
+
+# Vuepress build output
+.vuepress/dist
+
+# Storybook files
+out/
+.storybook-out
+
+# SvelteKit build output
+.svelte-kit
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Compiled output
+lib/ 
