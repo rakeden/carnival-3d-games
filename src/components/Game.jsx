@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Game3D from './game/Game3D';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from './ui/card';
-import { preloadAudio, playSound, toggleMute, getMuteState, toggleMusicMute, getMusicMuteState } from '../lib/audio';
+import { preloadAudio, playSound, toggleMute, getMuteState, toggleMusicMute, getMusicMuteState } from '@/lib/audio';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from './ui/dialog';
 
 // Audio files to preload

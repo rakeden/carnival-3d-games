@@ -3,7 +3,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { useSphere, useBox, useTrimesh } from '@react-three/cannon';
 import * as THREE from 'three';
 import { useGesture } from '@use-gesture/react';
-import { preloadAudio, playBounceSound } from '../../lib/audio';
+import { preloadAudio, playBounceSound } from '@/lib/audio';
 
 // Preload audio when component is first used
 const audioFiles = {
