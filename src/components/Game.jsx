@@ -4,11 +4,11 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from './ui/card';
 import { preloadAudio, playSound, toggleMute, getMuteState, toggleMusicMute, getMusicMuteState } from '@/lib/audio';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from './ui/dialog';
-import score1Audio from '/audio/score-1.mp3';
-import score3Audio from '/audio/score-3.mp3';
-import score5Audio from '/audio/score-5.mp3';
-import ambientMusicAudio from '/audio/ambient-music.mp3';
-import winAudio from '/audio/win.mp3';
+import score1Audio from '@assets/audio/score-1.mp3';
+import score3Audio from '@assets/audio/score-3.mp3';
+import score5Audio from '@assets/audio/score-5.mp3';
+import ambientMusicAudio from '@assets/audio/ambient-music.mp3';
+import winAudio from '@assets/audio/win.mp3';
 
 // Audio files to preload
 const audioFiles = {
