@@ -14,4 +14,4 @@ This project is a React application bootstrapped with Vite, styled using Tailwin
 
 ## Development
 
-This project was written 99.9% using Cursor and Claude 3.5, showcasing the capabilities of these tools in modern web development.
+This project was written 99% (prob. less, cursor was struggling with deployment and asset bundling) using Cursor and Claude 3.5, showcasing the capabilities of these tools in modern web development.
