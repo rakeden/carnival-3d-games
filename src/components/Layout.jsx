@@ -5,7 +5,7 @@ const Layout = () => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-svh flex flex-col">
 
       {/* Main Content */}
       {/* <main className="flex-grow container mx-auto px-4 py-8">

@@ -131,7 +131,7 @@ const Game = ({ onSceneReady }) => {
     }, [timeLeft, gameStarted, audioReady]);
 
     return (
-        <div className="relative min-h-screen">
+        <div className="relative min-h-svh">
             {/* Timer UI in top center */}
             {gameStarted && (
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
@@ -161,7 +161,7 @@ const Game = ({ onSceneReady }) => {
 
             {/* Audio controls in top right */}
             {gameStarted && (
-                <div className="absolute top-4 right-4 z-10 flex gap-2">
+                <div className="absolute top-4 right-4 z-10 flex flex-col md:flex-row gap-2">
                     <Button 
                         onClick={handleMusicMuteToggle}
                         className={`${isMusicMuted ? 'bg-gray-500' : 'bg-blue-500'} hover:bg-opacity-80 text-white`}
@@ -194,16 +194,16 @@ const Game = ({ onSceneReady }) => {
                             <div className="text-xl md:text-3xl text-white font-medium">
                                 Your Score
                             </div>
-                            <div className="flex gap-4 justify-center mt-10">
+                            <div className="flex flex-col md:flex-row gap-4 justify-center mt-10">
                                 <Button
                                     onClick={startGame}
-                                    className="bg-yellow-500 hover:bg-yellow-600 hover:cursor-pointer text-black font-bold py-8 px-12 text-4xl rounded-xl drop-shadow-lg"
+                                    className="bg-yellow-500 hover:bg-yellow-600 hover:cursor-pointer text-black font-bold py-6 px-8 md:py-8 md:px-12 text-2xl md:text-4xl rounded-xl drop-shadow-lg"
                                 >
                                     PLAY AGAIN
                                 </Button>
                                 <Button
                                     onClick={() => setShowInfoModal(true)}
-                                    className="bg-blue-500 hover:bg-blue-600 hover:cursor-pointer text-white font-bold py-8 px-12 text-4xl rounded-xl drop-shadow-lg"
+                                    className="bg-blue-500 hover:bg-blue-600 hover:cursor-pointer text-white font-bold py-6 px-8 md:py-8 md:px-12 text-2xl md:text-4xl rounded-xl drop-shadow-lg"
                                 >
                                     INFO
                                 </Button>
@@ -213,13 +213,13 @@ const Game = ({ onSceneReady }) => {
                         <div className="flex flex-col items-center gap-4">
                             <Button
                                 onClick={startGame}
-                                className="bg-yellow-500 hover:bg-yellow-600 hover:cursor-pointer text-black font-bold py-8 px-12 text-4xl rounded-xl drop-shadow-lg"
+                                className="bg-yellow-500 hover:bg-yellow-600 hover:cursor-pointer text-black font-bold py-6 md:py-8 px-8 md:px-12 text-2xl md:text-4xl rounded-xl drop-shadow-lg"
                             >
                                 START
                             </Button>
                             <Button
                                 onClick={() => setShowInfoModal(true)}
-                                className="bg-blue-500 hover:bg-blue-600 hover:cursor-pointer text-white font-bold py-4 px-8 text-xl rounded-xl drop-shadow-lg"
+                                className="bg-blue-500 hover:bg-blue-600 hover:cursor-pointer text-white font-bold py-6 md:py-8 px-8 md:px-12 text-2xl  rounded-xl drop-shadow-lg"
                             >
                                 INFO
                             </Button>

@@ -11,8 +11,8 @@ const LoadingScreen = ({ onPlay, isLoaded }) => {
         {/* Main Card */}
         <Card className="w-full max-w-2xl bg-card border-primary/20">
           <CardHeader className="pb-2">
-            <CardTitle className="text-2xl font-bold text-primary-foreground">
-                <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6 tracking-wider text-center">
+            <CardTitle className="text-2xl font-bold">
+                <h1 className="text-4xl text-yellow-500 md:text-6xl font-bold text-accent mb-6 tracking-wider text-center">
                     CARNIVAL GAMES
                 </h1>
             </CardTitle>
@@ -53,6 +53,7 @@ const LoadingScreen = ({ onPlay, isLoaded }) => {
               <Button 
                 onClick={onPlay}
                 variant="default"
+                className="bg-yellow-500 hover:bg-yellow-600 px-8 py-6 text-black rounded-xl font-bold uppercase"
                 size="lg"
               >
                 Let's Play!
@@ -79,7 +80,7 @@ const Home = () => {
     };
 
     return (
-        <div className="relative w-full h-screen">
+        <div className="relative w-full h-svh">
             {!gameStarted && <LoadingScreen onPlay={handleStartGame} isLoaded={sceneReady} />}
             <div className={`transition-opacity duration-1000 ${gameStarted ? 'opacity-100' : 'opacity-20'}`}>
                 <Game onSceneReady={handleSceneReady} />
