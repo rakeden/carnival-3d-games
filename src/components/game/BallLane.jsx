@@ -237,7 +237,8 @@ const Ball = ({ position, onScore, onPointerDown }) => {
             <meshStandardMaterial 
                 color="#34495e"
                 emissive="#34495e"
-                emissiveIntensity={hovered ? 0.25 : 0}
+                roughness={0.3}
+                emissiveIntensity={hovered ? 0.75 : 0.4}
             />
         </mesh>
     );
@@ -666,7 +667,14 @@ const BallLane = ({ position, onScore }) => {
                 receiveShadow
             >
                 <primitive object={surfaceGeometry} attach="geometry" />
-                <meshStandardMaterial color="#e5e5e5" side={THREE.DoubleSide} />
+                <meshStandardMaterial 
+                    color="#a8b6c5"
+                    emissive="#a8b6c5"
+                    emissiveIntensity={0.03}
+                    metalness={0.6}
+                    roughness={0.1}
+                    side={THREE.DoubleSide}
+                />
             </mesh>
             
             {/* Add colored borders around scoring holes */}
@@ -698,7 +706,9 @@ const BallLane = ({ position, onScore }) => {
                         <meshStandardMaterial 
                             color={getHoleColor(hole.score)} 
                             emissive={getHoleColor(hole.score)}
-                            emissiveIntensity={0.5}
+                            emissiveIntensity={1}
+                            roughness={0.1}
+                            metalness={0.1}
                             side={THREE.DoubleSide} 
                         />
                     </mesh>
@@ -708,53 +718,103 @@ const BallLane = ({ position, onScore }) => {
             {/* Lane box ramp */}
             <mesh ref={laneRamp} castShadow receiveShadow>
                 <boxGeometry args={[2, 0.01, 3.95]} />
-                <meshStandardMaterial color="#999999" />
+                <meshStandardMaterial 
+                    color="#a8b6c5"
+                    metalness={0.6}
+                    roughness={0.2}
+                    emissive="#a8b6c5"
+                    emissiveIntensity={0.03}
+                />
             </mesh>
 
             {/* Lane edges with physics */}
             <mesh ref={leftEdge} castShadow receiveShadow>
                 <boxGeometry args={[0.01, 0.5, 6]} />
-                <meshStandardMaterial color="#e5e5e5" />
+                <meshStandardMaterial 
+                    color="#3498db"
+                    metalness={0.8}
+                    roughness={0.2}
+                    emissive="#3498db"
+                    emissiveIntensity={0.1}
+                />
             </mesh>
             <mesh ref={rightEdge} castShadow receiveShadow>
                 <boxGeometry args={[0.01, 0.5, 6]} />
-                <meshStandardMaterial color="#e5e5e5" />
+                <meshStandardMaterial 
+                    color="#3498db"
+                    metalness={0.8}
+                    roughness={0.2}
+                    emissive="#3498db"
+                    emissiveIntensity={0.1}
+                />
             </mesh>
             {/* Lane edge backside with physics */}
             <mesh ref={backEdge} castShadow receiveShadow> 
                 <boxGeometry args={[2, 0.01, 0.5]} />
-                <meshStandardMaterial color="#e5e5e5" />
+                <meshStandardMaterial 
+                    color="#3498db"
+                    metalness={0.8}
+                    roughness={0.2}
+                    emissive="#3498db"
+                    emissiveIntensity={0.1}
+                />
             </mesh>
 
             {/* Lane box floor */}
             <mesh ref={laneFloor} castShadow receiveShadow>
                 <boxGeometry args={[2, 0.01, 4]} />
-                <meshStandardMaterial color="#999999" />
+                <meshStandardMaterial 
+                    color="#a8b6c5"
+                    metalness={0.2}
+                    roughness={0.8}
+                    emissive="#a8b6c5"
+                    emissiveIntensity={0.01}
+                />
             </mesh>
             {/* Lane box left side */}
             <mesh ref={laneLeftSide} castShadow receiveShadow>
                 <boxGeometry args={[0.5, 0.01, 7]} />
-                <meshStandardMaterial color="#999999" />
+                <meshStandardMaterial 
+                    color="#a8b6c5"  // Lighter blue-gray
+                    metalness={0.4}  // Reduced metalness to show shadows better
+                    roughness={0.6}  // Increased roughness for better shadow definition
+                />
             </mesh>
             {/* Lane box right side */}
             <mesh ref={laneRightSide} castShadow receiveShadow>
                 <boxGeometry args={[0.5, 0.01, 7]} />
-                <meshStandardMaterial color="#999999" />
+                <meshStandardMaterial 
+                    color="#a8b6c5"  // Lighter blue-gray
+                    metalness={0.4}
+                    roughness={0.6}
+                />
             </mesh>
             {/* Lane box front side */}
             <mesh ref={laneFrontSide} castShadow receiveShadow>
                 <boxGeometry args={[2, 0.01, 0.5]} />
-                <meshStandardMaterial color="#999999" />
+                <meshStandardMaterial 
+                    color="#a8b6c5"  // Lighter blue-gray
+                    metalness={0.4}
+                    roughness={0.6}
+                />
             </mesh>
             {/* Lane box back side */}
             <mesh ref={laneBackSide} castShadow receiveShadow>
                 <boxGeometry args={[2, 0.01, 0.5]} />
-                <meshStandardMaterial color="#999999" />
+                <meshStandardMaterial 
+                    color="#a8b6c5"  // Lighter blue-gray
+                    metalness={0.4}
+                    roughness={0.6}
+                />
             </mesh>
             {/* Lane box back side top */}
             <mesh ref={laneBackSideTop} castShadow receiveShadow>
                 <boxGeometry args={[2, 0.01, 0.85]} />
-                <meshStandardMaterial color="#999999" />
+                <meshStandardMaterial 
+                    color="#a8b6c5"  // Lighter blue-gray
+                    metalness={0.4}
+                    roughness={0.6}
+                />
             </mesh>
 
             {/* Multiple Balls */}

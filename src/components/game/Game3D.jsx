@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Environment, Stars, Grid, AccumulativeShadows, RandomizedLight, PerspectiveCamera } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
 import { useSpring, animated } from '@react-spring/three';
+import * as THREE from 'three';
 import BallLane from './BallLane';
 import RaceTrack3D from './RaceTrack3D';
 import CarnivalBooth from './CarnivalBooth';
@@ -84,6 +85,10 @@ const Game3D = ({ onScore, onSceneReady }) => {
         }
     };
 
+    {/* First, create a target object for the light */}
+    const lightTarget = new THREE.Object3D();
+    lightTarget.position.set(0, 2, 6); // Position it at the center of the BallLane
+
     return (
         <div className="w-full h-screen relative">
             <Canvas
@@ -91,34 +96,54 @@ const Game3D = ({ onScore, onSceneReady }) => {
                 onCreated={handleSceneReady}
                 className="w-full h-full"
             >
+
+                <Environment preset="night" />
+                <fog attach="fog" color="#000000" near={0} far={12} />
+                <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
+
                 <Suspense fallback={null}>
                     <Physics gravity={[0, -30, 0]}>
                         <AnimatedScene>
                             {/* Environment */}
-                            <Environment preset="night" />
-                            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
-                            
                             {/* Lighting */}
-                            <ambientLight intensity={0.5} />
-                            <pointLight position={[10, 10, 10]} intensity={1} castShadow />
-                            <spotLight
-                                position={[0, 5, 0]}
-                                angle={0.3}
-                                penumbra={0.5}
-                                intensity={1}
-                                castShadow
-                            />
-                            <directionalLight
-                                position={[5, 5, 5]}
-                                intensity={1}
-                                castShadow
-                                shadow-mapSize={[1024, 1024]}
-                                shadow-camera-far={50}
-                                shadow-camera-left={-10}
-                                shadow-camera-right={10}
-                                shadow-camera-top={10}
-                                shadow-camera-bottom={-10}
-                            />
+                            <group>
+                                
+                                {/* Main directional light from above */}
+                                <directionalLight
+                                    position={[-5, 20, 0]}
+                                    intensity={5}
+                                    castShadow
+                                    shadow-mapSize={[2048, 2048]}
+                                    shadow-camera-far={50}
+                                    shadow-camera-left={-10}
+                                    shadow-camera-right={10}
+                                    shadow-camera-top={10}
+                                    shadow-camera-bottom={-10}
+                                />
+
+                                {/* Front-angled directional light */}
+                                <directionalLight
+                                    position={[-3, 5, 10]}
+                                    intensity={10}
+                                    castShadow
+                                    shadow-mapSize={[2048, 2048]}
+                                    shadow-camera-far={50}
+                                    shadow-camera-left={-10}
+                                    shadow-camera-right={10}
+                                    shadow-camera-top={10}
+                                    shadow-camera-bottom={-10}
+                                />
+
+                                {/* Slight side lighting for depth */}
+                                <directionalLight
+                                    position={[5, 5, 0]}
+                                    intensity={0.1}
+                                    castShadow={false}  // Optional side light doesn't need shadows
+                                />
+
+                                {/* Ambient light for overall scene brightness */}
+                                <ambientLight intensity={0.4} />
+                            </group>
                             
                             {/* Debug Grid */}
                             <Grid
@@ -135,7 +160,7 @@ const Game3D = ({ onScore, onSceneReady }) => {
                             {/* Ground */}
                             <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
                                 <planeGeometry args={[100, 100]} />
-                                <meshStandardMaterial color="#303030" transparent opacity={0.5} />
+                                <meshStandardMaterial color="#303030" transparent opacity={0.1} />
                             </mesh>
 
                             {/* Carnival Booth */}
