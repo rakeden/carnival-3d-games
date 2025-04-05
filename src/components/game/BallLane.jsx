@@ -4,10 +4,11 @@ import { useSphere, useBox, useTrimesh } from '@react-three/cannon';
 import * as THREE from 'three';
 import { useGesture } from '@use-gesture/react';
 import { preloadAudio, playBounceSound } from '@/lib/audio';
+import ballBounceAudio from '@assets/audio/ball-bounce.mp3';
 
 // Preload audio when component is first used
 const audioFiles = {
-  bounce: '/audio/ball-bounce.mp3',
+  bounce: ballBounceAudio,
 };
 
 // Flag to track if audio has been initialized
